@@ -16,7 +16,7 @@ public class VictoryJar extends Application {
     }
 
     @Override
-    public void start(Stage welcomeScreen) {
+    public void start(Stage primaryStage) {
 
         try{
 
@@ -27,26 +27,15 @@ public class VictoryJar extends Application {
             //TODO: Add a nicer logo that's fit for purpose
             //Add CLM Logo
             Image icon = new Image("CLM Logo.png");
-            welcomeScreen.getIcons().add(icon);
+            primaryStage.getIcons().add(icon);
 
             //Scene Setup
             //TODO: Make it so if full screen is exited, text still looks correct
-            welcomeScreen.setTitle("Victory Jar");
-            //welcomeScreen.setHeight(500);
-            //welcomeScreen.setWidth(500);
-            welcomeScreen.setFullScreen(true);
+            primaryStage.setTitle("Victory Jar");
+            primaryStage.setFullScreen(false);
 
-            //Text on Welcome Screen
-            Text welcomeText = new Text();
-            welcomeText.setText("Welcome to the Victory Jar Application!");
-            welcomeText.setX(125);
-            welcomeText.setY(100);
-            welcomeText.setFont(Font.font("SourceSans", 50));
-            welcomeText.setFill(Color.GREY);
-
-            //root.getChildren().add(welcomeText); //Add text
-            welcomeScreen.setScene(scene); //Add scene
-            welcomeScreen.show();
+            primaryStage.setScene(scene); //Add scene
+            primaryStage.show();
 
         } catch(Exception e){
             e.printStackTrace();
